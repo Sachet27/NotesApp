@@ -37,6 +37,7 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.PreviewLightDark
@@ -63,6 +64,7 @@ fun FavoritedNotesScreen(
     onAction: (NoteActions)-> Unit,
     onNavigateToNoteScreen: ()->Unit
 ) {
+    val context= LocalContext.current
         Scaffold(
             modifier = Modifier
                 .fillMaxSize()
@@ -128,7 +130,7 @@ fun FavoritedNotesScreen(
                             },
                             onNoteFavorite = { onAction(NoteActions.onFavoriteNote(note.id)) },
                             modifier = Modifier.padding(8.dp),
-                            onDeleteNote = { onAction(NoteActions.onDeleteNote(note)) }
+                            onDeleteNote = { onAction(NoteActions.onDeleteNote(note, context)) }
                         )
                     }
                 }

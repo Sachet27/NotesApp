@@ -3,6 +3,7 @@ package com.example.notesapp.presentation
 import android.content.Context
 import android.media.Image
 import android.net.Uri
+import android.util.Log
 import android.webkit.MimeTypeMap
 import androidx.compose.material3.DrawerState
 import androidx.compose.material3.DrawerValue
@@ -74,7 +75,7 @@ class NoteViewModel(
                    )
                }
            }
-           is NoteActions.onDeleteNote-> {deleteNote(actions.note)}
+           is NoteActions.onDeleteNote-> {deleteNote(actions.note, actions.context)}
            is NoteActions.onAddNote-> {
                insertNote(actions.note)
                clearData()
@@ -184,8 +185,12 @@ class NoteViewModel(
         }
     }
 
-    private fun deleteNote(note: Note){
+    private fun deleteNote(note: Note, context: Context){
         viewModelScope.launch(Dispatchers.IO) {
+            val imageUri= note.uri
+            imageUri?.let{
+                context.deleteFile(imageUri.lastPathSegment)
+            }
             repository.deleteNote(note)
         }
     }

@@ -7,7 +7,7 @@ interface NoteActions{
     data class onSaveImage(val uri: String?, val context: Context): NoteActions
     data class onAddNote(val note: Note): NoteActions
     data class onUpdateNote(val note: Note): NoteActions
-    data class onDeleteNote(val note: Note): NoteActions
+    data class onDeleteNote(val note: Note,val context: Context): NoteActions
     data class onFavoriteNote(val id: Int?): NoteActions
     data object onClearData: NoteActions
     data class onSetupToNoteScreen(val id: Int?): NoteActions

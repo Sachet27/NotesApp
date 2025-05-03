@@ -175,7 +175,7 @@ fun HomeScreen(
                             onNoteFavorite = { onAction(NoteActions.onFavoriteNote(note.id)) },
                             modifier = Modifier.padding(8.dp),
                             onDeleteNote = {
-                                onAction(NoteActions.onDeleteNote(note))
+                                onAction(NoteActions.onDeleteNote(note, context))
                             }
                         )
                     }
