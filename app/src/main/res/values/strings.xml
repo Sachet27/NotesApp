@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">NotesApp</string>
+    <string name="channel_name">reminder_channel</string>
+    <string name="channel_id"> REMINDER</string>
+</resources>
