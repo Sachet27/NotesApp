@@ -5,7 +5,7 @@ Noted App is an easy-to-use and practical notes app. It is packed with tons of f
 - **CRUD Operations**: Create, view, edit, and delete notes seamlessly.
 - **Photo Attachments**: Insert and save photos locally for your notes. 
 - **Theme Switching**: Manually toggle between in-app themes to suit your preference.
-- **Modern UI**: Clean and user-friendly interface using Jetpack Compose.
+- **Reminders**: Set reminders for your notes so that you dont forget them. 
 
 ## Tech Stack 🛠️
 - **Kotlin**: Base language used in this app.
